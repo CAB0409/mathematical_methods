@@ -18,6 +18,7 @@ warnings.filterwarnings('ignore')
 
 from IPython.html.widgets import interact, fixed
 from IPython.display import display
+import matplotlib.pyplot as plt
 
 # load signal
 wave = thinkdsp.read_wave('473826__toiletrolltube__190524-0289-electromagnets-headphones-1.wav')
@@ -27,4 +28,11 @@ segment = wave.segment(start=2, duration=4)
 segment.make_audio()
 
 # Actual plot
-segment.plot()
+#segment.plot()
+[ys,ts] = segment.get_raw()
+#print("ys type: ", type(ys))
+#print("ts type: ", type(ts))
+#print("ts val: ", ts)
+plt.plot(ys)
+plt.ylabel('segmented signal')
+plt.show()

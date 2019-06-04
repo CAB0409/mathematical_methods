@@ -641,6 +641,10 @@ class Wave:
         Returns: new Wave
         """
         return copy.deepcopy(self)
+    def get_raw(self):
+        """Grabs raw values
+        Returns: raw numpy array and time sample"""
+        return(self.ys,self.ts)
 
     def __len__(self):
         return len(self.ys)
