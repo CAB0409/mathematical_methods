@@ -7,3 +7,6 @@ numpy
 seaborn
 scipy
 p2j (converts python file to juypter notebook)
+
+run:
+jupyter notebook (in this directory)
